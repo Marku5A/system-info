@@ -7,6 +7,9 @@ _(Linux/Unix only)_
 terminal:
 
 **_Linux/Unix:_**
+
 $_cd ~/Path/to/file/_
+
 $_chmod +x main_
+
 $_./main_
