@@ -1,0 +1,45 @@
+#!/usr/bin/python3
+import platform
+
+i = 0
+def write_to_file(filename="info.txt", system_info="", option=""):
+	file = open(filename, option)
+	file.write("Os: "+system_info[0]+"\n")
+	file.write("Processor: "+system_info[1]+"\n")
+	file.write("Version: "+system_info[2]+"\n")
+	file.write("Platform: "+system_info[3]+"\n")
+	file.write("Network Name: "+system_info[4]+"\n\n")
+	file.close()
+	get_input(system_info)
+
+def read_from_file(filename="info.txt"):
+	file = open(filename, "r")
+	print(file.read())
+	file.close()
+	get_input(system_info)
+
+
+system_info = []
+system_info.append(platform.system())
+system_info.append(platform.machine())
+system_info.append(platform.version())
+system_info.append(platform.platform())
+system_info.append(platform.node())
+
+def read_write(filename, choice, system_info):
+	if (choice == "a"):
+		write_to_file(filename, system_info, choice)
+	elif (choice == "w"):
+		write_to_file(filename, system_info, choice)
+	elif (choice == "r"):
+		read_from_file(filename)
+	else:
+		print("That is not a valid option!")
+		get_input()
+
+def get_input(system_info):
+	filename = input("What file would you like to use? ")
+	choice = input("Would you like to a:append to the file, w:write to the file,\n or r:read form the file? ")
+	read_write(filename, choice, system_info)
+
+get_input(system_info)
