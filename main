@@ -8,8 +8,9 @@ def write_to_file(filename="info.txt", system_info="", option=""):
 	file.write("Processor: "+system_info[1]+"\n")
 	file.write("Version: "+system_info[2]+"\n")
 	file.write("Platform: "+system_info[3]+"\n")
-	file.write("Network Name: "+system_info[4]+"\n\n")
+	file.write("Network Name: "+system_info[4]+"\n\t")
 	file.close()
+	print("Successfully wrote/appended to file.")
 	get_input(system_info)
 
 def read_from_file(filename="info.txt"):
@@ -39,7 +40,7 @@ def read_write(filename, choice, system_info):
 
 def get_input(system_info):
 	filename = input("What file would you like to use? ")
-	choice = input("Would you like to a:append to the file, w:write to the file,\n or r:read form the file? ")
+	choice = input("Would you like to a:append to the file, w:write to the file,\n or r:read from the file? ")
 	read_write(filename, choice, system_info)
 
 get_input(system_info)
