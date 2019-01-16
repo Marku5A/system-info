@@ -8,8 +8,8 @@ terminal:
 
 **_Linux/Unix:_**
 
-$_cd ~/Path/to/file/_
+`$cd ~/Path/to/file/`
 
-$_chmod +x main_
+`$chmod +x main`
 
-$_./main_
+`$./main`
